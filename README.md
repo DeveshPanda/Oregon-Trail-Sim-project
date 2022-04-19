@@ -4,10 +4,7 @@
 # UCR Survival Journey RPG
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: \<[Devesh Panda](https://github.com/DeveshPanda)\>
- > Authors: \<[Joseph D'Angelo](https://github.com/joey8angelo)\>
- > Authors: \<[Jose Mena](https://github.com/jmena016)\>
- > Authors: \<[Satya Rajendra](https://github.com/sraje010)\>
+ > Authors: \<[Devesh Panda](https://github.com/DeveshPanda)\>\<[Joseph D'Angelo](https://github.com/joey8angelo)\>\<[Jose Mena](https://github.com/jmena016)\>\<[Satya Rajendra](https://github.com/sraje010)\>
  
  > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). Your project needs to implement at least one design pattern iteratively, which you will have to justify in later phases.The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings. While Daily Scrums are not required we highly encourage you to practice them.
 
@@ -23,15 +20,10 @@
 
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project? What are the features that the project provides?
- > 
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
- > You also need to set up an empty project board by choosing the  “Automated kanban with review” option on Github. You should also have a Backlog and In testing columns added.
+Creating this project interested our group because we have all had fond experiences with RPG’s and thought it would be interesting to create our own RPG. Another reason this project is important is because it allows us to have our first experience with creating a large computer science-related project in a team, while using industry standard tools and techniques such as Github and Scrum. For the project language, we are using C++. We are also using Kanban/Scrum to coordinate our work, Git and Github to help us track our changes and make sure they are correct, and PuTTY and Hammer to actually input and test our code. 
+
+For the program’s input, it’s just different character’s on the user’s keyboard that represent different actions their character can take. The output will consist of text that is used to show the user what is going on in the program. One major feature of the program is that there are choices that the user can make that would affect the outcome of the story. Said choices can lead the user to finding multiple different endings, which is also another feature. Some choices include eating, sleeping, or going to class, all of which affect your stats in some way. Stats are another feature that the user is able to interact with, which help them decide what their next move should be. Stats can also block you from doing certain things. For example, if a stat is too low in a certain subject you won’t be able to do your homework for the subject until you attend office hours for the subject. In the game you can also choose which UCR college you would like to be a part of, which are essentially classes you can find in any RPG game. The colleges are what the stats are based off of, and each college has randomized stats excluding their own stat, which will start off at the maximum. Additionally, there is a certain amount of time in a day within the game, meaning the player must carefully plan what they want to do each day. Each college also has required classes they need to pass by the game’s standard to graduate, which is one of the possible endings. Finally, there are random events that can occur that will occur when trying to perform a normal action.
+
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Backlog` column
