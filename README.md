@@ -39,9 +39,11 @@ For the program’s input, it’s just different character’s on the user’s k
 ## Class Diagram
 ![image](https://user-images.githubusercontent.com/58212666/166180186-28d38096-25a9-407a-bf1b-08b7d81399ea.png)
 
-The base Player class is our foundation which carries most of our user's methods and private members so that for the rest of our derived classes BCOE, CHASS, and CNAS Major can inherit them as well as receive a Colleges class to support our abstract class (Player) within its private data members for additional user features. Some methods of user interaction includes the improve(), study(), and goToClass() functions which play a role in character progression and story continuity. A few features that separate our derived from our base are some hard coded stats that define our Major classes and the polymorphic functions such as "improve()" and "introduction()" which helps to distinguish our user's Major and stats. Finally our Colleges class is to help keep class count of our user for progression purposes though this one is still up for revision. 
 
 Description:
+The base Player class is our foundation which carries most of our user's methods and private members so that for the rest of our derived classes BCOE, CHASS, and CNAS Major can inherit them as well as receive a Colleges class to support our abstract class (Player) within its private data members for additional user features. Some methods of user interaction includes the improve(), study(), and goToClass() functions which play a role in character progression and story continuity. A few features that separate our derived from our base are some hard coded stats that define our Major classes and the polymorphic functions such as "improve()" and "introduction()" which helps to distinguish our user's Major and stats. Finally our Colleges class is to help keep class count of our user for progression purposes though this one is still up for revision. 
+
+
  > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
  
  > ## Phase III
