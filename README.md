@@ -37,7 +37,6 @@ For the program’s input, it’s just different character’s on the user’s k
  >     * How work will be divided between the team members
 
 ## Class Diagram
-UML diagram:
 ![image](https://user-images.githubusercontent.com/58212666/166180186-28d38096-25a9-407a-bf1b-08b7d81399ea.png)
 
 Description:
