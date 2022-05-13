@@ -4,7 +4,7 @@ RandomEvent::RandomEvent()
  : eventNumber(0)
 { }
 
-RandomEvent::getEventNumber() {
+int RandomEvent::getEventNumber() {
     eventNumber = rand() % 11 + 1;
     return eventNumber;
 }

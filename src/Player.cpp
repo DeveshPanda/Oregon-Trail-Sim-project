@@ -13,8 +13,14 @@ void Player::randomEvent() {
 
     switch(number) {
         case 1:
-            cout << "Something" << endl;
-    }
+            cout << "You fell and hit your head: -5 in math, science, and english.";
+            math -= 5;
+            science -= 5;
+            english -= 5;
+            if (math < 0) { math = 0; }
+            if (science < 0) { science = 0;}
+            if (english < 0) { english = 0;}
+    };
 }
 
 void Player::checkTime() {
@@ -32,7 +38,7 @@ void Player::checkLowStats() {
     }
     else if (rest < 50) {
         cout << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
-        sleep();
+        sleep(8);
     }
     else if (school < 50) {
         cout << "You're doing too poorly. You have to study so you're not dumb." << endl;
