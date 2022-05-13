@@ -173,6 +173,7 @@ void Player::study() {
 		    cout << "You have studied math for " << studyHrs << " hours and have gained " << studyGains << " math experience." << endl;
 		    math += studyGains;
 		    time -= studyHrs;
+                    break;
                 }
             }
         case 2: 
@@ -187,6 +188,7 @@ void Player::study() {
 		    cout << "You have studied science for " << studyHrs << " hours and have gained " << studyGains << " science experience." << endl;
 		    science += studyGains;
 		    time -= studyHrs;
+                    break;
  		}
 	    }    
         case 3: 
@@ -201,6 +203,7 @@ void Player::study() {
 		    cout << "You have studied english for " << studyHrs << " hours and have gained " << studyGains << " english experience." << endl;
 		    english += studyGains;
 		    time -= studyHrs;
+                    break;
  		}
 	    }   
     };
