@@ -20,43 +20,6 @@ void Player::randomEvent() {
             if (math < 0) { math = 0; }
             if (science < 0) { science = 0;}
             if (english < 0) { english = 0;}
-	case 2:
-	    std::string answer;
-	    cout << "You're invited to go out with your friends on a weekend, do you accept their offer? yes or no" << endl;
-	    cin >> answer;
-	    if(answer == "yes" || answer == "Yes") {
-	        math -= 10;
- 		science -= 10;
- 		english -= 10;
-	    }
-	    if(answer == "no" || answer == "No") {
-	        math += 10;
-		science += 10;
-		english += 10;
-	    }
-	    if (math < 0) { math = 0; }
-            if (science < 0) { science = 0;}
-            if (english < 0) { english = 0;}
-        case 3:
-	    std::string answer;
-	    cout << "Oh no you've just received an unexpected quiz from your math professor. Lets check your stats to see if you are prepared." << endl;
-	    getStats();
-	    if(math > 80) {
-	        cout << "You're going to ace this quiz." << endl;
-		school += 20;
-	    }
-            else if(math > 60 && math < 80) {
-	        cout << "You might have a shot at this." << endl;
-		school += 10;
-	    }
-	    else if(math < 60 && math > 30) {
-		cout << "You might need to study a little more." << endl;
-		school -= 10;
-	    }
-	    else {
-		cout << "You're going to fail this quiz." << endl;
-		school -= 20;
-	    }
     };
 }
 
@@ -153,59 +116,3 @@ void Player::sleep(int t) {
     checkTime();
     checkLowStats();
 }
-
-void Player::study() {
-    int subjectNum;
-    int studyHrs;
-    int studyGains;
-    cout << "what do you choose to study? 1) math 2) science 3) english" << endl;
-    cin >> subjectNum
-    switch(subjectNum) {
-        case 1: 
-	    cout << "For how long do you want to study this subject? (answer must be an integer and is in hours)" << endl;
-	    while(true) {
-	        cin >> studyHrs;
-	        if(studyHrs > time) {
-		    cout << "You cannot attempt this action you only have " << time << " hours left in the day." << endl;
-	        }
-                if(studyHrs < time) {
-                    studyGains = studyHrs * 2;
-		    cout << "You have studied math for " << studyHrs << " hours and have gained " << studyGains << " math experience." << endl;
-		    math += studyGains;
-		    time -= studyHrs;
-                    break;
-                }
-            }
-        case 2: 
-	    cout << "For how long do you want to study this subject? (answer must be an integer and is in hours)" << endl;
-	    while(true) {
-	        cin >> studyHrs;
-	        if(studyHrs > time) {
-		    cout << "You cannot attempt this action you only have " << time << " hours left in the day." << endl;
-	        }
-                if(studyHrs < time) {
-                    studyGains = studyHrs * 2;
-		    cout << "You have studied science for " << studyHrs << " hours and have gained " << studyGains << " science experience." << endl;
-		    science += studyGains;
-		    time -= studyHrs;
-                    break;
- 		}
-	    }    
-        case 3: 
-	    cout << "For how long do you want to study this subject? (answer must be an integer and is in hours)" << endl;
-	    while(true) {
-	        cin >> studyHrs;
-	        if(studyHrs > time) {
-		    cout << "You cannot attempt this action you only have " << time << " hours left in the day." << endl;
-	        }
-                if(studyHrs < time) {
-                    studyGains = studyHrs * 2;
-		    cout << "You have studied english for " << studyHrs << " hours and have gained " << studyGains << " english experience." << endl;
-		    english += studyGains;
-		    time -= studyHrs;
-                    break;
- 		}
-	    }   
-    };
-}
-
