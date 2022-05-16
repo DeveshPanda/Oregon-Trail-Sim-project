@@ -56,7 +56,7 @@ The base Player class is our foundation which carries most of our user's methods
  >        
  >   The design pattern that we chose for this project was the strategy pattern because as we continued our daily scrums and code we found out that the strategy          pattern was what best fitted our rpg. Some features that we implemented were pure virtual functions for our derived classes to use, but for different purposes      that each would use it for of course. Furthermore, we created an entire interface from our abstract base class to help lead design in our derived classes. In        writing the code with this pattern we found out how much easier we can structure our game over functions and member variables that our derived classes shared        and in doing so this has made coding less exhaustive, much easier to read, and overall just better game design.
 
-![image](https://user-images.githubusercontent.com/58212666/168695250-e0455e6f-d100-46d5-8ede-7c0e92c8b5a7.png)
+![image](https://user-images.githubusercontent.com/58212666/168699597-dcc20696-6c9c-4599-a793-e7b500324c41.png)
 
  >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
 
