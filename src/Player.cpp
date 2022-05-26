@@ -38,7 +38,7 @@ void Player::checkLowStats() {
     }
     else if (rest < 50) {
         cout << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
-        sleep(8);
+        sleep();
     }
     else if (school < 50) {
         cout << "You're too dumb. You have to study so you're not dumb." << endl;
@@ -130,6 +130,7 @@ void Player::eat() {
     time -= 1;
     cout << "You ate for 1 hour." << endl;
     cout << "Your hunger level is now " << food << "/100." << endl;
+    cout << "You have " << time << " hours left in the day." << endl;
     checkTime();
     checkLowStats();
 }
