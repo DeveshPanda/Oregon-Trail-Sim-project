@@ -41,22 +41,21 @@ void Player::checkLowStats() {
         sleep(8);
     }
     else if (school < 50) {
-        cout << "You're doing too poorly. You have to study so you're not dumb." << endl;
+        cout << "You're too dumb. You have to study so you're not dumb." << endl;
         study();
     }
-    else return;
 }
 
 void Player::getStats() {
     cout << "Name: " << name << endl;
     cout << "Major: " << major << endl;
-    cout << "Food: " << food << endl;
-    cout << "Sleep: " << rest << endl;
-    cout << "School: " << school << endl;
-    cout << "Time remaining: " << time << endl;
-    cout << "Math: " << math << endl;
-    cout << "Science: " << science << endl;
-    cout << "English: " << english << endl;
+    cout << "Time remaining: " << time << "/24" << endl;
+    cout << "Food: " << food << "/100" << endl;
+    cout << "Sleep: " << rest << "/100" <<endl;
+    cout << "School: " << school << "/100" << endl;
+    cout << "Math: " << math << "/100" << endl;
+    cout << "Science: " << science << "/100" << endl;
+    cout << "English: " << english << "/100" <<endl;
 }
 
 string Player::getName() {
@@ -81,13 +80,58 @@ void Player::setStats(int f, int sl, int sc, int m, int s, int e) {
 }
 
 void Player::goToClass() {
-    time -= 5;
+    char answer = 'a';
+    if (5 > time) {
+        cout << "You do not have enough time in the day to study for the full time. You can only study for " << time << " hours." << endl;
+        while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
+            cout << "Would you like to study for the remaining time? (Y/N): ";
+            cin >> answer;
+            if (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N')
+                cout << "Please enter a valid answer." << endl;
+        }
+        if (answer == 'y' || answer == 'Y') {
+            if (math <= (100 - 5 * time)) math += (5 * time);
+            else math = 100;
+            if (science <= (100 - 5 * time)) science += (5 * time);
+            else science = 100;
+            if (english <= (100 - 5 * time)) english += (5 * time);
+            else english = 100;
+            cout << "You studied for " << time << " hours." << endl;
+            cout << "Your math level is now " << math << "/100." << endl;
+            cout << "Your science level is now " << science << "/100." << endl;
+            cout << "Your english level is now " << english << "/100." << endl;
+            time = 0;
+        }
+        else if (answer == 'n' || answer == 'N') {
+            return;
+        }
+    }
+    else {
+        cout << "You studied for 5 hours." << endl;
+        if (math <= 75) math += 25;
+        else math = 100;
+        if (science <= 75) science += 25;
+        else science = 100;
+        if (english <= 75) english += 25;
+        else english = 100;
+        time -= 5;
+        cout << "Your math level is now " << math << "/100." << endl;
+        cout << "Your science level is now " << science << "/100." << endl;
+        cout << "Your english level is now " << english << "/100." << endl;
+        cout << "You have " << time << " hours left in the day." << endl;
+    }
+    checkTime();
+    checkLowStats();
 }
 
 void Player::eat() {
     if (food <= 90) food += 10;
     else food = 100;
     time -= 1;
+    cout << "You ate for 1 hour." << endl;
+    cout << "Your hunger level is now " << food << "/100." << endl;
+    checkTime();
+    checkLowStats();
 }
 
 void Player::sleep(int t) {
@@ -95,14 +139,17 @@ void Player::sleep(int t) {
     if (t > time) {
         cout << "You do not have enough time in the day to sleep this much. You can only sleep for " << time << " hours." << endl;
         while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
-            cout << "Would you like to sleep? (Y/N) ";
+            cout << "Would you like to sleep? (Y/N): ";
             cin >> answer;
             if (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N')
                 cout << "Please enter a valid answer." << endl;
         }
         if (answer == 'y' || answer == 'Y') {
-            cout << "Good night." << endl;
+            if (rest <= (100 - 5 * time)) rest += (5 * time);
+            else rest = 100;
+            cout << "You slept for" << time << " hours." << endl;
             time = 0;
+            cout << "Your rest level is now " << rest << "/100." << endl;
         }
         else if (answer == 'n' || answer == 'N') {
             return;
@@ -111,7 +158,10 @@ void Player::sleep(int t) {
     else {
         cout << "You slept for " << t << " hours." << endl;
         time -= t;
-        cout << "You have " << time << " hours left in the day.";
+        if (rest <= (100 - 5 * t)) rest += (5 * t);
+        else rest = 100;
+        cout << "Your rest level is now " << rest << "/100." << endl;
+        cout << "You have " << time << " hours left in the day." << endl;
     }
     checkTime();
     checkLowStats();
