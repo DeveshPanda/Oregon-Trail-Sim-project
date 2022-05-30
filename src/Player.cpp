@@ -20,6 +20,14 @@ void Player::randomEvent() {
             if (math < 0) { math = 0; }
             if (science < 0) { science = 0;}
             if (english < 0) { english = 0;}
+	case 2:
+	    cout << "You have an emergency outside of school: -15 in math, science, and english.";
+	    math -=15;
+	    science -=15;
+	    english -=15;
+	    if(math < 0) { math = 0;}
+            if(science < 0) { science = 0;}
+	    if(english < 0) { english =0;}
     };
 }
 
