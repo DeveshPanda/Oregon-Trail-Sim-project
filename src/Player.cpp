@@ -13,27 +13,76 @@ void Player::randomEvent() {
 
     switch(number) {
         case 1:
-            cout << "You fell and hit your head: -5 in math, science, and english.";
+            cout << "You fell and hit your head: -5 in math, science, and english." << endl;
             math -= 5;
             science -= 5;
             english -= 5;
             if (math < 0) { math = 0; }
             if (science < 0) { science = 0;}
             if (english < 0) { english = 0;}
-	case 2:
-	    cout << "You have an emergency outside of school: -15 in math, science, and english.";
-	    math -=15;
-	    science -=15;
-	    english -=15;
-	    if(math < 0) { math = 0;}
-            if(science < 0) { science = 0;}
-	    if(english < 0) { english =0;}
-    };
+            break;
+        case 2:
+            cout << "You were invited to go out to eat. You lose sleep and some points in math, science, and english." << endl;
+            rest -= 10;
+            math -= 5;
+            science -= 5;
+            english -= 5;
+            if (rest < 0) rest = 0;
+            if (math < 0) math = 0;
+            if (science < 0) science = 0;
+            if (english < 0) english = 0;
+            break;
+        case 3:
+            cout << "You had an emergency outside of school. You keep up with your studies but lose sleep and forget to eat." << endl;
+            rest -= 15;
+            food -= 10;
+            math += 5;
+            science += 5;
+            english += 5;
+            if (rest < 0) rest = 0;
+            if (food < 0) food = 0;
+            if (math > 100) math = 100;
+            if (science > 100) science = 100;
+            if (english > 100) english = 100;
+            break;
+        case 4:
+            cout << "You applied for an internship and got accepted. You learn a lot of new things but lose sleep to keep up with everything." << endl;
+            math += 10;
+            science += 10;
+            english += 10;
+            rest -= 10;
+            if (math > 100) math = 100;
+            if (science > 100) science = 100;
+            if (english > 100) english = 10;;
+            if (rest < 0) rest = 0;
+            break;
+        case 5:
+            cout << "You went out to a party and got drunk. You decide to sleep in which causes you to miss class." << endl;
+            rest += 15;
+            math -= 5;
+            science -= 5;
+            english -= 5;
+            if (rest > 100) rest = 100;
+            if (math < 0) math = 0;
+            if (science < 0) science = 0;
+            if (english < 0) english = 0;
+            break;
+        case 6:
+            cout << "You went to class and there was a pop quiz.";
+            if (calcSchoolLevel() >= 70) {
+                cout << " You managed to pass the quiz so you don't have to spend extra time studying." << endl;
+            }
+            else {
+                cout << " You failed the quiz so you have to stay behind and study longer." << endl;
+                study(time);
+            }
+            break;
+    }
 }
 
 void Player::checkTime() {
     if (time <= 0) {
-        cout << "There is no more time left for today. Starting the next day.";
+        cout << "There is no more time left for today. Starting the next day." << endl;
         time = 24;
     }
     else return;
@@ -46,12 +95,21 @@ void Player::checkLowStats() {
     }
     else if (rest < 50) {
         cout << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
-        sleep();
+        sleep(time);
     }
-    else if (school < 50) {
+    else if (calcSchoolLevel() < 50) {
         cout << "You're too dumb. You have to study so you're not dumb." << endl;
-        study();
+        study(time);
     }
+}
+
+int Player::calcSchoolLevel() {
+    school = (math + science + english)/3;
+    if (school > 100) {
+        school = 100;
+        return 100;
+    }
+    else return (math + science + english)/3;
 }
 
 void Player::getStats() {
@@ -60,7 +118,7 @@ void Player::getStats() {
     cout << "Time remaining: " << time << "/24" << endl;
     cout << "Food: " << food << "/100" << endl;
     cout << "Sleep: " << rest << "/100" <<endl;
-    cout << "School: " << school << "/100" << endl;
+    cout << "School: " << calcSchoolLevel() << "/100" << endl;
     cout << "Math: " << math << "/100" << endl;
     cout << "Science: " << science << "/100" << endl;
     cout << "English: " << english << "/100" <<endl;
@@ -104,7 +162,7 @@ void Player::goToClass() {
             else science = 100;
             if (english <= (100 - 5 * time)) english += (5 * time);
             else english = 100;
-            cout << "You studied for " << time << " hours." << endl;
+            cout << "You went to class for " << time << " hours." << endl;
             cout << "Your math level is now " << math << "/100." << endl;
             cout << "Your science level is now " << science << "/100." << endl;
             cout << "Your english level is now " << english << "/100." << endl;
@@ -170,6 +228,47 @@ void Player::sleep(int t) {
         if (rest <= (100 - 5 * t)) rest += (5 * t);
         else rest = 100;
         cout << "Your rest level is now " << rest << "/100." << endl;
+        cout << "You have " << time << " hours left in the day." << endl;
+    }
+    checkTime();
+    checkLowStats();
+}
+
+void Player::study(int t) {
+    char answer = 'a';
+    if (t > time) {
+        cout << "You do not have enough time in the day to study this much. You can only study for " << time << " hours." << endl;
+        while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
+            cout << "Would you like to study? (Y/N): ";
+            cin >> answer;
+            if (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N')
+                cout << "Please enter a valid answer." << endl;
+        }
+        if (answer == 'y' || answer == 'Y') {
+            if (math <= (100 - 3 * time)) math += (5 * time);
+            else math = 100;
+            if (science <= (100 - 3 * time)) science += (5 * time);
+            else science = 100;
+            if (english <= (100 - 3 * time)) english += (5 * time);
+            else english = 100;
+            cout << "You studied for" << time << " hours." << endl;
+            time = 0;
+            cout << "Your school level is now " << calcSchoolLevel() << "/100." << endl;
+        }
+        else if (answer == 'n' || answer == 'N') {
+            return;
+        }
+    }
+    else {
+        cout << "You studied for " << t << " hours." << endl;
+        time -= t;
+        if (math <= (100 - 3 * t)) math += (3 * t);
+        else math = 100;
+        if (science <= (100 - 3 * t)) science += (3 * t);
+        else science = 100;
+        if (english <= (100 - 3 * t)) english += (3 * t);
+        else english = 100;
+        cout << "Your school level is now " << calcSchoolLevel() << "/100." << endl;
         cout << "You have " << time << " hours left in the day." << endl;
     }
     checkTime();
