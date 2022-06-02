@@ -1,4 +1,5 @@
 #include "../header/CHASS.h"
+using namespace std;
 
 CHASS::CHASS(int m, int s, int e, const string& n) 
  : Player(m, s, e, n)

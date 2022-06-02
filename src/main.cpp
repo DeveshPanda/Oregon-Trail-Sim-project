@@ -2,6 +2,7 @@
 #include "../header/BCOE.h"
 #include "../header/CHASS.h"
 #include "../header/CNAS.h"
+using namespace std;
 
 void optionBCOE(int n, BCOE player);
 void optionCNAS(int n, CNAS player);

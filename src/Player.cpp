@@ -1,4 +1,5 @@
 #include "../header/Player.h"
+using namespace std;
 
 Player::Player(int m, int s, int e, const string& n) {
     math = m;
@@ -84,9 +85,9 @@ void Player::randomEvent() {
     }
 }
 
-void Player::checkTime() {
+void Player::checkTime(ostream& out) {
     if (time <= 0) {
-        cout << "There is no more time left for today. Starting the next day." << endl;
+        out << "There is no more time left for today. Starting the next day." << endl;
         time = 24;
         if (dayNumber == 5) {
             dayNumber = 1;
@@ -94,24 +95,24 @@ void Player::checkTime() {
         }
         else 
             ++dayNumber;
-        cout << "It is now " << endl;
-        getDayAndWeek();
-        cout << endl;
+        out << "It is now " << endl;
+        getDayAndWeek(out);
+        out << endl;
     }
     else return;
 }
 
-void Player::checkLowStats() {
+void Player::checkLowStats(ostream& out) {
     if (food < 50) {
-        cout << "You're too hungry. You have to eat to regain strength." << endl;
+        out << "You're too hungry. You have to eat to regain strength." << endl;
         eat();
     }
     else if (rest < 50) {
-        cout << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
+        out << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
         sleep(time);
     }
     else if (calcSchoolLevel() < 50) {
-        cout << "You're too dumb. You have to study so you're not dumb." << endl;
+        out << "You're too dumb. You have to study so you're not dumb." << endl;
         study(time);
     }
 }
@@ -125,8 +126,8 @@ int Player::calcSchoolLevel() {
     else return (math + science + english)/3;
 }
 
-void Player::getDayAndWeek() {
-    cout << "Day " << dayNumber << ", Week " << weekNumber;
+void Player::getDayAndWeek(ostream& out) {
+    out << "Day " << dayNumber << ", Week " << weekNumber;
 }
 
 void Player::getStats() {
