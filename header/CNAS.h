@@ -4,8 +4,9 @@
 #include "Player.h"
 
 class CNAS : public Player {
-public:
-    CNAS(int, int, int, string&);
+    public:
+        CNAS(int, int, int, const string&);
+        virtual void intro();
 };
 
 #endif

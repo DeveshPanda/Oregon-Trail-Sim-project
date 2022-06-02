@@ -5,6 +5,7 @@ Player::Player(int m, int s, int e, const string& n) {
     science = s;
     english = e;
     name = n;
+    dayNumber = weekNumber = 1;
 }
 
 void Player::randomEvent() {
@@ -73,9 +74,12 @@ void Player::randomEvent() {
                 cout << " You managed to pass the quiz so you don't have to spend extra time studying." << endl;
             }
             else {
-                cout << " You failed the quiz so you have to stay behind and study longer." << endl;
+                cout << " You failed the quiz so you have to stay behind and study for the rest of the day." << endl;
                 study(time);
             }
+            break;
+        default:
+            cout << "Luckily, nothing happened to you today." << endl;
             break;
     }
 }
@@ -84,6 +88,15 @@ void Player::checkTime() {
     if (time <= 0) {
         cout << "There is no more time left for today. Starting the next day." << endl;
         time = 24;
+        if (dayNumber == 5) {
+            dayNumber = 1;
+            ++weekNumber; 
+        }
+        else 
+            ++dayNumber;
+        cout << "It is now " << endl;
+        getDayAndWeek();
+        cout << endl;
     }
     else return;
 }
@@ -110,6 +123,10 @@ int Player::calcSchoolLevel() {
         return 100;
     }
     else return (math + science + english)/3;
+}
+
+void Player::getDayAndWeek() {
+    cout << "Day " << dayNumber << ", Week " << weekNumber;
 }
 
 void Player::getStats() {
@@ -149,10 +166,10 @@ void Player::goToClass() {
     char answer = 'a';
     if (5 > time) {
         cout << "You do not have enough time in the day to study for the full time. You can only study for " << time << " hours." << endl;
-        while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
+        while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
             cout << "Would you like to study for the remaining time? (Y/N): ";
             cin >> answer;
-            if (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N')
+            if (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
                 cout << "Please enter a valid answer." << endl;
         }
         if (answer == 'y' || answer == 'Y') {
@@ -205,10 +222,10 @@ void Player::sleep(int t) {
     char answer = 'a';
     if (t > time) {
         cout << "You do not have enough time in the day to sleep this much. You can only sleep for " << time << " hours." << endl;
-        while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
+        while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
             cout << "Would you like to sleep? (Y/N): ";
             cin >> answer;
-            if (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N')
+            if (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
                 cout << "Please enter a valid answer." << endl;
         }
         if (answer == 'y' || answer == 'Y') {
@@ -238,10 +255,10 @@ void Player::study(int t) {
     char answer = 'a';
     if (t > time) {
         cout << "You do not have enough time in the day to study this much. You can only study for " << time << " hours." << endl;
-        while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
+        while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
             cout << "Would you like to study? (Y/N): ";
             cin >> answer;
-            if (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N')
+            if (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
                 cout << "Please enter a valid answer." << endl;
         }
         if (answer == 'y' || answer == 'Y') {
@@ -273,4 +290,14 @@ void Player::study(int t) {
     }
     checkTime();
     checkLowStats();
+}
+
+void Player::checkProgress() {
+    double graduationPercent = (((static_cast<double>(weekNumber) - 1) * 5 + static_cast<double>(dayNumber))/50) * 100; 
+    cout << "Graduation: " << setprecision(2) << fixed << graduationPercent << "% " << " complete." << endl;
+    cout << "Condition to graduate: Complete all 50 days of school." << endl;
+
+    double transferPercent = ((static_cast<double>(calcSchoolLevel()))/100) * 100;
+    cout << endl << "Transfer: " << setprecision(2) << fixed << transferPercent << "% " << " complete." << endl;
+    cout << "Condition to transfer: Have math, english, and science stats all at 100." << endl;
 }

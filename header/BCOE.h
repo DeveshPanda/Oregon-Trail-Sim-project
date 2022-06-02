@@ -5,8 +5,8 @@
 
 class BCOE : public Player {
 public:
-    BCOE(int, int, int, string&);
+    BCOE(int, int, int, const string&);
+    virtual void intro();
 };
 
 #endif
-
