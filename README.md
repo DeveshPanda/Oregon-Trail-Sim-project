@@ -53,9 +53,14 @@ The base Player class is our foundation which carries most of our user's methods
  >   * What design pattern(s) did you use? For each pattern you must explain in 4-5 sentences:
  >     * Why did you pick this pattern? And what feature did you implement with it?
  >     * How did the design pattern help you write better code?
- >   * An updated class diagram that reflects the design pattern(s) you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
+ >        
+ >   The design pattern that we chose for this project was the strategy pattern because as we continued our daily scrums and code we found out that the strategy          pattern was what best fitted our rpg. Some features that we implemented were pure virtual functions for our derived classes to use, but for different purposes      that each would use it for of course. Furthermore, we created an entire interface from our abstract base class to help lead design in our derived classes. In        writing the code with this pattern we found out how much easier we can structure our game over functions and member variables that our derived classes shared        and in doing so this has made coding less exhaustive, much easier to read, and overall just better game design.
+
+![image](https://user-images.githubusercontent.com/58212666/168699597-dcc20696-6c9c-4599-a793-e7b500324c41.png)
+
  >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
-> 
+
+
 > During the meeting with your reader you will discuss: 
  > * How effective your last sprint was (each member should talk about what they did)
  > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint

@@ -7,6 +7,6 @@ class CHASS : public Player {
     public:
         CHASS(int, int, int, const string&);
         virtual void intro();
-}
+};
 
 #endif
