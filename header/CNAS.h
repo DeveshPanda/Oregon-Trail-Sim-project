@@ -7,6 +7,6 @@ class CNAS : public Player {
     public:
         CNAS(int, int, int, const string&);
         virtual void intro();
-}
+};
 
 #endif
