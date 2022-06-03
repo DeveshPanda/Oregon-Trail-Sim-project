@@ -8,15 +8,15 @@ int main() {
     int major = 0;
     int option = 0;
     int event1 = rand() % 4 + 2;
-    int event2 = rand() % 5 + 6;
-    int event3 = rand() % 5 + 11;
-    int event4 = rand() % 5 + 16;
-    int event5 = rand() % 5 + 21;
-    int event6 = rand() % 5 + 26;
-    int event7 = rand() % 5 + 31;
-    int event8 = rand() % 5 + 36;
-    int event9 = rand() % 5 + 41;
-    int event10 = rand() % 5 + 46;
+    //int event2 = rand() % 5 + 6;
+    //int event3 = rand() % 5 + 11;
+    //int event4 = rand() % 5 + 16;
+    //int event5 = rand() % 5 + 21;
+    //int event6 = rand() % 5 + 26;
+    //int event7 = rand() % 5 + 31;
+    //int event8 = rand() % 5 + 36;
+    //int event9 = rand() % 5 + 41;
+    //int event10 = rand() % 5 + 46;
     bool r1 = true;
     bool r2 = true;
     bool r3 = true;
@@ -78,7 +78,7 @@ int main() {
                 }
                 break;
             case 2:
-                if (player->getDayNumber() == event2 && r2) {
+                if (player->getDayNumber() == event1 && r2) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
@@ -87,7 +87,7 @@ int main() {
                 }
                 break;
             case 3:
-                if (player->getDayNumber() == event3 && r3) {
+                if (player->getDayNumber() == event1 && r3) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
@@ -96,7 +96,7 @@ int main() {
                 }
                 break;
             case 4:
-                if (player->getDayNumber() == event4 && r4) {
+                if (player->getDayNumber() == event1 && r4) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
@@ -105,7 +105,7 @@ int main() {
                 }
                 break;
             case 5:
-                if (player->getDayNumber() == event5 && r5) {
+                if (player->getDayNumber() == event1 && r5) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
@@ -114,7 +114,7 @@ int main() {
                 }
                 break;
             case 6:
-                if (player->getDayNumber() == event6 && r6) {
+                if (player->getDayNumber() == event1 && r6) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
@@ -123,7 +123,7 @@ int main() {
                 }
                 break;
             case 7:
-                if (player->getDayNumber() == event7 && r7) {
+                if (player->getDayNumber() == event1 && r7) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
@@ -132,7 +132,7 @@ int main() {
                 }
                 break;
             case 8:
-                if (player->getDayNumber() == event8 && r8) {
+                if (player->getDayNumber() == event1 && r8) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
@@ -141,7 +141,7 @@ int main() {
                 }
                 break;
             case 9:
-                if (player->getDayNumber() == event9 && r9) {
+                if (player->getDayNumber() == event1 && r9) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
@@ -150,7 +150,7 @@ int main() {
                 }
                 break;
             case 10:
-                if (player->getDayNumber() == event10 && r10) {
+                if (player->getDayNumber() == event1 && r10) {
                     cout << "Woah!! You had a random event today!! Let's see what it is..." <<endl;
                     cout << endl;
                     cout << endl;
