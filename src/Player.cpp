@@ -104,9 +104,9 @@ void Player::checkTime() {
     else return;
 }
 
-void Player::checkTime() {
+void Player::checkTime(ostream& out) {
     if (time <= 0) {
-        cout << endl << "There is no more time left for today. Starting the next day." << endl;
+        out << endl << "There is no more time left for today. Starting the next day." << endl;
         time = 24;
         if (dayNumber == 5) {
             dayNumber = 1;
@@ -115,9 +115,9 @@ void Player::checkTime() {
         else 
             ++dayNumber;
         if (weekNumber <= 10) {
-            cout << "It is now ";
+            out << "It is now ";
             getDayAndWeek(out);
-            cout << endl;
+            out << endl;
         }
     }
     else return;
@@ -140,18 +140,18 @@ void Player::checkLowStats() {
     }
 }
 
-void Player::checkLowStats() {
+void Player::checkLowStats(ostream& out) {
     if (food < 50) {
-        cout << endl << "You're too hungry. You have to eat to regain strength." << endl;
+        out << endl << "You're too hungry. You have to eat to regain strength." << endl;
         eat();
     }
     else if (rest < 50) {
-        cout << endl << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
+        out << endl << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
         int t = (50 - rest)/5 + 1;
         sleep(t);
     }
     else if (calcSchoolLevel() < 50) {
-        cout << endl << "You're too dumb. You have to study so you're not dumb." << endl;
+        out << endl << "You're too dumb. You have to study so you're not dumb." << endl;
         int t = (50 - calcSchoolLevel())/5 + 1;
         study(t);
     }
@@ -170,8 +170,8 @@ void Player::getDayAndWeek() {
     cout << "Day " << dayNumber << ", Week " << weekNumber;
 }
 
-void Player::getDayAndWeek() {
-    cout << "Day " << dayNumber << ", Week " << weekNumber;
+void Player::getDayAndWeek(ostream& out) {
+    out << "Day " << dayNumber << ", Week " << weekNumber;
 }
 
 void Player::getStats() {
