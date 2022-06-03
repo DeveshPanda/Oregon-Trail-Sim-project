@@ -22,11 +22,11 @@ class Player {
         int dayNumber;
         int weekNumber;
         void checkTime(); //checks how much time is left; if 0 then reset time to 24 and start a new day in game
-	void checkTime(ostream&);
+	void checkTime();
         void checkLowStats(); //checks to see if a stat is too low; force player to make the stat go up
-	void checkLowStats(ostream&);
+	void checkLowStats();
         void getDayAndWeek(); 
-	void getDayAndWeek(ostream&);
+	void getDayAndWeek();
     public:
         Player(int, int, int, const string&);
         void randomEvent();
