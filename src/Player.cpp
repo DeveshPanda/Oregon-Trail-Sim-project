@@ -1,4 +1,4 @@
-nclude "../header/Player.h"
+#include "../header/Player.h"
 
 Player::Player(int m, int s, int e, const string& n) {
     math = m;
@@ -211,6 +211,9 @@ void Player::setName(const string& newName) {
 }
 
 void Player::setStats(int f, int sl, int sc, int m, int s, int e) {
+    if(f < 0 || sl < 0 || sc < 0 || m < 0 || s < 0 || e < 0) {
+	throw "Cannot set stats with negative values!";
+    }
     food = f;
     rest = sl;
     school = sc;
