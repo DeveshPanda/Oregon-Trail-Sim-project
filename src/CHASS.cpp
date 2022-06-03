@@ -1,4 +1,4 @@
-#include "../header/CHASS.h"
+nclude "../header/CHASS.h"
 
 CHASS::CHASS(int m, int s, int e, const string& n) 
  : Player(m, s, e, n)

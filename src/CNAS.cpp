@@ -1,4 +1,4 @@
-#include "../header/CNAS.h"
+nclude "../header/CNAS.h"
 
 CNAS::CNAS(int m, int s, int e, const string& n) 
  : Player(m, s, e, n)
