@@ -5,12 +5,11 @@
 
 class BCOE : public Player {
 public:
-    virtual void checkTime(std::ostream&);
-    virtual void checkLowStats(std::ostream&);
-    virtual void getDayAndWeek(std::ostream&);
-    BCOE(int, int, int, const std::string&);
+    void checkTime(ostream&);
+    void checkLowStats(ostream&);
+    void getDayAndWeek(ostream&);
+    BCOE(int, int, int, const string&);
     virtual void intro();
 };
-
 
 #endif
