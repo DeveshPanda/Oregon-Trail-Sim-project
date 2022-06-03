@@ -1,4 +1,4 @@
-nclude "../header/Player.h"
+#include "../header/Player.h"
 
 Player::Player(int m, int s, int e, const string& n) {
     math = m;
