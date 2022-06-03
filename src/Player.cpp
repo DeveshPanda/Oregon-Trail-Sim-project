@@ -104,9 +104,9 @@ void Player::checkTime() {
     else return;
 }
 
-void Player::checkTime(ostream& out) {
+void Player::checkTime() {
     if (time <= 0) {
-        out << endl << "There is no more time left for today. Starting the next day." << endl;
+        cout << endl << "There is no more time left for today. Starting the next day." << endl;
         time = 24;
         if (dayNumber == 5) {
             dayNumber = 1;
@@ -115,9 +115,9 @@ void Player::checkTime(ostream& out) {
         else 
             ++dayNumber;
         if (weekNumber <= 10) {
-            out << "It is now ";
+            cout << "It is now ";
             getDayAndWeek(out);
-            out << endl;
+            cout << endl;
         }
     }
     else return;
@@ -140,18 +140,18 @@ void Player::checkLowStats() {
     }
 }
 
-void Player::checkLowStats(ostream& out) {
+void Player::checkLowStats() {
     if (food < 50) {
-        out << endl << "You're too hungry. You have to eat to regain strength." << endl;
+        cout << endl << "You're too hungry. You have to eat to regain strength." << endl;
         eat();
     }
     else if (rest < 50) {
-        out << endl << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
+        cout << endl << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
         int t = (50 - rest)/5 + 1;
         sleep(t);
     }
     else if (calcSchoolLevel() < 50) {
-        out << endl << "You're too dumb. You have to study so you're not dumb." << endl;
+        cout << endl << "You're too dumb. You have to study so you're not dumb." << endl;
         int t = (50 - calcSchoolLevel())/5 + 1;
         study(t);
     }
@@ -170,8 +170,8 @@ void Player::getDayAndWeek() {
     cout << "Day " << dayNumber << ", Week " << weekNumber;
 }
 
-void Player::getDayAndWeek(ostream& out) {
-    out << "Day " << dayNumber << ", Week " << weekNumber;
+void Player::getDayAndWeek() {
+    cout << "Day " << dayNumber << ", Week " << weekNumber;
 }
 
 void Player::getStats() {
