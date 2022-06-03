@@ -80,7 +80,14 @@ The base Player class is our foundation which carries most of our user's methods
  ![image](https://user-images.githubusercontent.com/102571470/171904030-6727dc10-e47a-4751-b198-1dc3e12f120b.png)
  ![image](https://user-images.githubusercontent.com/102571470/171904089-a9241fba-7afe-4755-be85-7b0876e2c256.png)
  ![image](https://user-images.githubusercontent.com/102571470/171904160-8da068b1-1433-48cc-abe0-35074317c7a5.png)
- 
+ ![image](https://user-images.githubusercontent.com/102571470/171904943-7f0c4024-c71e-4fee-bed3-a9013a551b80.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171905018-1d54588b-a97e-45c4-bcb7-5d86a52875fb.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171905120-d4421b9b-fb0c-4eef-855f-fffc70e61afc.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171905229-aca56aa6-6516-43e7-896f-6a8e7a991295.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171905494-a6538c86-5532-4605-85f6-15486b1988f0.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171907009-2c00fb75-6ce2-40e1-a6f8-d3d01888d11c.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171907094-875eccfe-94dc-45d6-b703-e53cd34dcde6.png)
+
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
