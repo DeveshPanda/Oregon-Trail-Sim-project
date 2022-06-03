@@ -76,16 +76,27 @@ The base Player class is our foundation which carries most of our user's methods
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
+ Starting screen after entering your name and choosing a class
  ![image](https://user-images.githubusercontent.com/102571470/171903774-f5b51d29-a60f-4112-8ea0-9abbd5ace361.png)
+ Using the `Get Stats` option
  ![image](https://user-images.githubusercontent.com/102571470/171904030-6727dc10-e47a-4751-b198-1dc3e12f120b.png)
+ Using the `Eat` option
  ![image](https://user-images.githubusercontent.com/102571470/171904089-a9241fba-7afe-4755-be85-7b0876e2c256.png)
+ Using the `Go to class` option
  ![image](https://user-images.githubusercontent.com/102571470/171904160-8da068b1-1433-48cc-abe0-35074317c7a5.png)
+ Using the `Sleep` option and choosing 3 hours
  ![image](https://user-images.githubusercontent.com/102571470/171904943-7f0c4024-c71e-4fee-bed3-a9013a551b80.png)
+ Using the `Study` option and choosing 3 hours
  ![image](https://user-images.githubusercontent.com/102571470/171905018-1d54588b-a97e-45c4-bcb7-5d86a52875fb.png)
+ Using the `Check Progress` option
  ![image](https://user-images.githubusercontent.com/102571470/171905120-d4421b9b-fb0c-4eef-855f-fffc70e61afc.png)
+ Using the `Transfer` option before being eligible for transferring
  ![image](https://user-images.githubusercontent.com/102571470/171905229-aca56aa6-6516-43e7-896f-6a8e7a991295.png)
+ Using the `Sleep` option and choosing 8 hours when the max you can choose is 6
  ![image](https://user-images.githubusercontent.com/102571470/171905494-a6538c86-5532-4605-85f6-15486b1988f0.png)
+ Using the `Transfer` option after being eligible for transferring
  ![image](https://user-images.githubusercontent.com/102571470/171907009-2c00fb75-6ce2-40e1-a6f8-d3d01888d11c.png)
+ Using the `Dropout` option
  ![image](https://user-images.githubusercontent.com/102571470/171907094-875eccfe-94dc-45d6-b703-e53cd34dcde6.png)
 
  ## Installation/Usage
