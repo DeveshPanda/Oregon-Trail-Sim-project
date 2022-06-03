@@ -5,7 +5,7 @@
 
 class CNAS : public Player {
     public:
-        CNAS(int, int, int, const string&);
+        CNAS(int, int, int, const std::string&);
         virtual void intro();
 };
 

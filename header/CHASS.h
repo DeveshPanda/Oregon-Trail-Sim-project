@@ -5,7 +5,7 @@
 
 class CHASS : public Player {
     public:
-        CHASS(int, int, int, const string&);
+        CHASS(int, int, int, const std::string&);
         virtual void intro();
 };
 

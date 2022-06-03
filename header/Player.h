@@ -22,8 +22,11 @@ class Player {
         int dayNumber;
         int weekNumber;
         void checkTime(); //checks how much time is left; if 0 then reset time to 24 and start a new day in game
+	void checkTime(ostream&);
         void checkLowStats(); //checks to see if a stat is too low; force player to make the stat go up
+	void checkLowStats(ostream&);
         void getDayAndWeek(); 
+	void getDayAndWeek(ostream&);
     public:
         Player(int, int, int, const string&);
         void randomEvent();
@@ -36,6 +39,7 @@ class Player {
         int getDayNumber() { return dayNumber; }
         int getWeekNumber() { return weekNumber; }
         void getStats();
+	void getStats(ostream&);
         string getName();
         string getMajor();
         void setName(const string&);
@@ -50,3 +54,4 @@ class Player {
 };
 
 #endif
+

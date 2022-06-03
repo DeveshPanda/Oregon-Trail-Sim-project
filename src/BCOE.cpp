@@ -1,5 +1,17 @@
 #include "../header/BCOE.h"
 
+void BCOE::checkTime(ostream& out) {
+    Player::checkTime(out);
+}
+
+void BCOE::checkLowStats(ostream& out) {
+    Player::checkLowStats(out);
+}
+
+void BCOE::getDayAndWeek(ostream& out) {
+    Player::getDayAndWeek(out);
+}
+
 BCOE::BCOE(int m, int s, int e, const string& n) 
  : Player(m, s, e, n)
 { major = "BCOE"; }

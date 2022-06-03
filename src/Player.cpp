@@ -104,6 +104,25 @@ void Player::checkTime() {
     else return;
 }
 
+void Player::checkTime(ostream& out) {
+    if (time <= 0) {
+        out << endl << "There is no more time left for today. Starting the next day." << endl;
+        time = 24;
+        if (dayNumber == 5) {
+            dayNumber = 1;
+            ++weekNumber; 
+        }
+        else 
+            ++dayNumber;
+        if (weekNumber <= 10) {
+            out << "It is now ";
+            getDayAndWeek(out);
+            out << endl;
+        }
+    }
+    else return;
+}
+
 void Player::checkLowStats() {
     if (food < 50) {
         cout << endl << "You're too hungry. You have to eat to regain strength." << endl;
@@ -116,6 +135,23 @@ void Player::checkLowStats() {
     }
     else if (calcSchoolLevel() < 50) {
         cout << endl << "You're too dumb. You have to study so you're not dumb." << endl;
+        int t = (50 - calcSchoolLevel())/5 + 1;
+        study(t);
+    }
+}
+
+void Player::checkLowStats(ostream& out) {
+    if (food < 50) {
+        out << endl << "You're too hungry. You have to eat to regain strength." << endl;
+        eat();
+    }
+    else if (rest < 50) {
+        out << endl << "You're too sleepy. You have to sleep to not fall over while walking." << endl;
+        int t = (50 - rest)/5 + 1;
+        sleep(t);
+    }
+    else if (calcSchoolLevel() < 50) {
+        out << endl << "You're too dumb. You have to study so you're not dumb." << endl;
         int t = (50 - calcSchoolLevel())/5 + 1;
         study(t);
     }
@@ -134,6 +170,10 @@ void Player::getDayAndWeek() {
     cout << "Day " << dayNumber << ", Week " << weekNumber;
 }
 
+void Player::getDayAndWeek(ostream& out) {
+    out << "Day " << dayNumber << ", Week " << weekNumber;
+}
+
 void Player::getStats() {
     cout << "Name: " << name << endl;
     cout << "Major: " << major << endl;
@@ -144,6 +184,18 @@ void Player::getStats() {
     cout << "Math: " << math << "/100" << endl;
     cout << "Science: " << science << "/100" << endl;
     cout << "English: " << english << "/100" <<endl;
+}
+
+void Player::getStats(ostream& out) {
+    out << "Name: " << name << endl;
+    out << "Major: " << major << endl;
+    out << "Time remaining: " << time << "/24" << endl;
+    out << "Food: " << food << "/100" << endl;
+    out << "Sleep: " << rest << "/100" <<endl;
+    out << "School: " << calcSchoolLevel() << "/100" << endl;
+    out << "Math: " << math << "/100" << endl;
+    out << "Science: " << science << "/100" << endl;
+    out << "English: " << english << "/100" <<endl;
 }
 
 string Player::getName() {
