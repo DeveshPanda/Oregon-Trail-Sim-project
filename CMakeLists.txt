@@ -6,7 +6,7 @@ Project(Final_Project)
 
 ADD_SUBDIRECTORY(googletest)
 
-ADD_EXECUTABLE(main src/main.cpp src/CHASS.cpp src/CNAS.cpp)
+ADD_EXECUTABLE(main src/main.cpp src/Player.cpp src/BCOE.cpp src/CHASS.cpp src/CNAS.cpp src/RandomEvent.cpp)
 
 ADD_EXECUTABLE(test test.cpp src/BCOE.cpp src/Player.cpp src/RandomEvent.cpp)
 

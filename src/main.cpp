@@ -1,4 +1,4 @@
-nclude "../header/Player.h"
+#include "../header/Player.h"
 #include "../header/BCOE.h"
 #include "../header/CHASS.h"
 #include "../header/CNAS.h"
