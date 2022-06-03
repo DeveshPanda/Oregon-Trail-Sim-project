@@ -76,7 +76,11 @@ The base Player class is our foundation which carries most of our user's methods
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ ![image](https://user-images.githubusercontent.com/102571470/171903774-f5b51d29-a60f-4112-8ea0-9abbd5ace361.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171904030-6727dc10-e47a-4751-b198-1dc3e12f120b.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171904089-a9241fba-7afe-4755-be85-7b0876e2c256.png)
+ ![image](https://user-images.githubusercontent.com/102571470/171904160-8da068b1-1433-48cc-abe0-35074317c7a5.png)
+ 
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
