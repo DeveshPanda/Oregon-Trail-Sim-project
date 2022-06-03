@@ -100,7 +100,6 @@ The base Player class is our foundation which carries most of our user's methods
  ![image](https://user-images.githubusercontent.com/102571470/171907094-875eccfe-94dc-45d6-b703-e53cd34dcde6.png)
 
  ## Installation/Usage
- > Instructions on installing and running your application
+ To install and run the application just compile all the .cpp except test.cpp, then run the executable that is produced. It is required to compile all of them since   main.cpp relies on the BCOE, CHASS, and CNAS files. These files need the Player.cpp file which needs the RandomEvent.cpp file. Of course, all the corresponding header files are also needed.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+ The project was tested using a test harness with many different tests that showed the functions being used in the program worked properly with any type of case. The main executable was also run multiple times to check for any errors that might have occured.
